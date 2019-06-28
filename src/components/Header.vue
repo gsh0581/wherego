@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="header-left ">北京<i class="iconfont"> &#xe65f;</i></div>
+    <div class="header-left ">{{this.city}}<i class="iconfont"> &#xe65f;</i></div>
     <div class="header-input"> <i class="iconfont">&#xe760;</i> 输入商家/品类/商圈</div>
     <div class="header-right"><i class="iconfont"> &#xe600;</i> 我的</div>
   </div>
@@ -8,7 +8,10 @@
 
 <script>
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  props:{
+    city:String
+  }
 };
 </script>
 

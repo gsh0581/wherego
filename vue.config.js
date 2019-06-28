@@ -3,6 +3,7 @@ const resolve = (dir) => path.join(__dirname, dir);
 // eslint-disable-next-line no-unused-vars
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
 module.exports = {
+   
     chainWebpack: config => {
         // 添加别名
         config.resolve.alias
@@ -19,4 +20,5 @@ module.exports = {
           .set('@layouts', resolve('src/layouts'))
           .set('@static', resolve('src/static'));
     }
+
 }
