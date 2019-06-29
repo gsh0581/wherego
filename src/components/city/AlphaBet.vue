@@ -1,10 +1,15 @@
 <template>
     <ul class="list">
         <li class="item" 
-        v-for="(items, index) in letter" 
+        v-for="(items, index) in letters" 
         :key="index"
-        @click="handleLetterClick" >
-                {{items.initial}}
+        :ref="items"
+        @click="handleLetterClick"
+        @touchstart="handleTouchStart"
+        @touchmove="handleTouchMove"
+        @touchend="handleTouchEnd"
+         >
+        {{items}}
             </li>  
     </ul>
 </template>
@@ -14,9 +19,42 @@ export default {
     props:{
         letter:Array
     },
+    data() {
+        return {
+            touchStatus:false,
+            startY:0
+        }
+    },
+    updated() {
+        // 页面更新时获取，不再是滑动时获取
+        this.startY = this.$refs['A'][0].offsetTop
+    },
+    computed: {
+      letters(){
+          const letters = []
+          for (const i in this.letter) {
+              letters.push(this.letter[i].initial)
+          }
+          return letters
+      }  
+    },
     methods:{
         handleLetterClick(e){
             this.$emit('change',e.target.innerText)
+        },
+         handleTouchStart(){
+            this.touchStatus=true
+        } ,
+        handleTouchMove(e){
+            if(this.touchStatus){
+                const touchY = e.touches[0].clientY -50.5
+                const index= Math.floor((touchY-this.startY)/20)-1
+                if(index >= 0 && index< this.letters.length)
+                    this.$emit('change',this.letters[index])
+            }
+        },
+         handleTouchEnd(e){
+               this.touchStatus=false
         }
 
     }

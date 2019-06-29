@@ -13,7 +13,6 @@
 export default {
   name: "CityHeader",
   props:{
-   
   }
 };
 </script>

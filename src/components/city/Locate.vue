@@ -39,13 +39,19 @@
             </ul>
         </div>
     </div>
+    <foot></foot>
   </div>
+
   </div>
 </template>
 <script>
 import Scroll from 'better-scroll'
+import Foot from "@/components/Footer"
 export default {
   name: "CityLocation",
+  components:{
+    Foot
+  },
   props:{
     hot:Array,
     all:Array,
@@ -58,13 +64,14 @@ export default {
     initScroll(){
       this.scroll = new Scroll(this.$refs.wrapper,{
             scrollY: true,
-              click: true
+              click: true,
+              bounce: false
           })
     }
         
   },
-   async mounted() {
-    await this.initScroll()
+    mounted() {
+     this.initScroll()
   },
   watch:{
     letter(){

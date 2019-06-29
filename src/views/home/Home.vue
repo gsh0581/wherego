@@ -1,11 +1,13 @@
 <template>
-<div >
   <div>
-    <home-header :city="city"></home-header>
+  <home-header :city="city"></home-header>
+  <div class="list" ref="wrapper">
+    <div>
     <home-ad></home-ad>
     <home-swiper :list="swiperList"></home-swiper>
     <recommend :list="recommendList"></recommend>
     <foot></foot>
+    </div>
   </div>
   </div>
 </template>
@@ -17,6 +19,7 @@ import HomeSwiper from "@/components/home/Swiper";
 import Recommend from "@/components/home/Recommend";
 import Foot from "@/components/Footer";
 import axios from "axios";
+import Scroll from 'better-scroll'
 export default {
   name: "home",
   components: {
@@ -49,9 +52,22 @@ export default {
   },
   mounted() {
     this.getHomeInfo();
+    this.scroll = new Scroll(this.$refs.wrapper,{
+            scrollY: true,
+              click: true
+          })
   }
 };
 </script>
-<style>
+<style lang="stylus" scoped>
+.list
+    position absolute
+    width 100%
+    top 1rem
+    left: 0
+    bottom: 0
+    right: 0
+    background #f0efed
+    overflow hidden
 </style>
 
