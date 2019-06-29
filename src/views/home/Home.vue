@@ -1,4 +1,5 @@
 <template>
+<div >
   <div>
     <home-header :city="city"></home-header>
     <home-ad></home-ad>
@@ -6,13 +7,14 @@
     <recommend :list="recommendList"></recommend>
     <foot></foot>
   </div>
+  </div>
 </template>
 
 <script>
 import HomeHeader from "@/components/Header";
-import HomeAd from "@/components/Ad";
-import HomeSwiper from "@/components/Swiper";
-import Recommend from "@/components/Recommend";
+import HomeAd from "@/components/home/Ad";
+import HomeSwiper from "@/components/home/Swiper";
+import Recommend from "@/components/home/Recommend";
 import Foot from "@/components/Footer";
 import axios from "axios";
 export default {
@@ -29,7 +31,6 @@ export default {
       city:'',
       swiperList :[],
       recommendList:[]
-
     }
   },
   methods: {

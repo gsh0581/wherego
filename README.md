@@ -27,3 +27,7 @@ yarn run lint
 
 ### Customize configuration
 路由：根据网址的不同返回不同的页面
+
+vm.$nextTick(()=>{
+
+})

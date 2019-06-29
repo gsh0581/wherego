@@ -1,6 +1,8 @@
 <template>
   <div class="header">
+    <router-link to="/city">
     <div class="header-left ">{{this.city}}<i class="iconfont"> &#xe65f;</i></div>
+    </router-link>
     <div class="header-input"> <i class="iconfont">&#xe760;</i> 输入商家/品类/商圈</div>
     <div class="header-right"><i class="iconfont"> &#xe600;</i> 我的</div>
   </div>
@@ -23,6 +25,7 @@ export default {
     background $bgColor
     color #fff
     .header-left 
+      color #fff
       float left
       text-align center
       font-size .32rem

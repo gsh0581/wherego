@@ -3,7 +3,14 @@ const resolve = (dir) => path.join(__dirname, dir);
 // eslint-disable-next-line no-unused-vars
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
 module.exports = {
-   
+    // devServer:{
+    //     proxy:{
+    //         '/api':{
+    //             target:'',
+
+    //         }
+    //     }
+    // },
     chainWebpack: config => {
         // 添加别名
         config.resolve.alias
