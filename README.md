@@ -31,3 +31,6 @@ yarn run lint
 vm.$nextTick(()=>{
 
 })
+better-scroll 横向触发方法
+css的 width max-content
+设置 scrollX:true ,scrollY:false

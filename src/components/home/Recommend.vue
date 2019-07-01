@@ -2,7 +2,7 @@
   <div class="recommend">
     <div class="recommend-title">猜你喜欢</div>
     <ul>
-        <li class="item" v-for="item of list" :key="item.id">
+        <router-link :to="{name:'detail',params:{id:item.id}}" tag="li" class="item" v-for="item of list" :key="item.id">
             <div class="item-img-wrapper">
                 <img :src="item.imgUrl" alt="" class="item-img">                
             </div>
@@ -15,7 +15,7 @@
                     <span class="line-right">已售{{item.saled}}</span> 
                 </div>
             </div>
-        </li>
+        </router-link>
     </ul>
     <div class="more">
         <div class="more-title">

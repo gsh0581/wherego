@@ -1,9 +1,11 @@
 <template>
   <div class="header">
-    <router-link to="/city">
-    <div class="header-left ">{{this.city}}<i class="iconfont"> &#xe65f;</i></div>
+    <router-link to="/city" tag="div" class="header-left ">
+    {{this.city}}<i class="iconfont"> &#xe65f;</i>
     </router-link>
-    <div class="header-input"> <i class="iconfont">&#xe760;</i> 输入商家/品类/商圈</div>
+    <router-link to="/search" tag="div" class="header-input" :list="list">
+   <i class="iconfont">&#xe760;</i> 输入商家/品类/商圈
+    </router-link>
     <div class="header-right"><i class="iconfont"> &#xe600;</i> 我的</div>
   </div>
 </template>
@@ -12,7 +14,8 @@
 export default {
   name: "HomeHeader",
   props:{
-    city:String
+    city:String,
+    list:Array
   }
 };
 </script>
@@ -38,7 +41,7 @@ export default {
     .header-input
       flex 1
       height .64rem
-      padding 0 0 0 .3rem
+      padding 0 2.2rem 0 .3rem
       line-height .64rem
       font-size .26rem
       color #68dbce

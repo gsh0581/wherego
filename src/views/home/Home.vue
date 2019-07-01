@@ -1,6 +1,6 @@
 <template>
   <div>
-  <home-header :city="city"></home-header>
+  <home-header :city="city" :list="recommendList"></home-header>
   <div class="list" ref="wrapper">
     <div>
     <home-ad></home-ad>
@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import HomeHeader from "@/components/Header";
-import HomeAd from "@/components/home/Ad";
+import HomeHeader from "@/components/home/Header";
+import HomeAd from "@/components/Ad";
 import HomeSwiper from "@/components/home/Swiper";
 import Recommend from "@/components/home/Recommend";
 import Foot from "@/components/Footer";

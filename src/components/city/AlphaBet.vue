@@ -47,10 +47,16 @@ export default {
         } ,
         handleTouchMove(e){
             if(this.touchStatus){
-                const touchY = e.touches[0].clientY -50.5
-                const index= Math.floor((touchY-this.startY)/20)-1
-                if(index >= 0 && index< this.letters.length)
-                    this.$emit('change',this.letters[index])
+                // 节流限制
+                if(this.timer){
+                    clearTimeout(this.timer)
+                }
+                this.timer = setTimeout(()=>{
+                    const touchY = e.touches[0].clientY -50.5
+                    const index= Math.floor((touchY-this.startY)/20)-1
+                    if(index >= 0 && index< this.letters.length)
+                        this.$emit('change',this.letters[index])
+                },16)
             }
         },
          handleTouchEnd(e){
