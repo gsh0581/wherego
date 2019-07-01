@@ -26,7 +26,7 @@ export default new Router({
     },
     {
       path:'/detail',
-      name:'datail',
+      name:'detail',
       component:Detail
      
     },  

@@ -11,11 +11,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: "HomeHeader",
   props:{
-    city:String,
     list:Array
+  },
+  computed:{
+    ...mapState(['city'])
   }
 };
 </script>
@@ -33,7 +36,8 @@ export default {
       text-align center
       font-size .32rem
       height  1.01rem
-      width 1.35rem
+      min-width 1.35rem
+      padding 0 .1rem
       line-height 1.01rem
       .iconfont{
         font-size .24rem

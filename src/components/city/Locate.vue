@@ -2,7 +2,7 @@
 <div class="list" ref="wrapper">
   <div>
     <div class="box locate border">
-    定位城市： <span class="city-name ">定位中...</span>
+    当前城市： <span class="city-name ">{{this.currentCity}}</span>
     </div>
     <div class="recent ">
       <h4>最近访问</h4>
@@ -14,7 +14,11 @@
      <div class="hot">
         <h4>热门城市</h4>
         <ul class="city-name box nopadding" >
-        <li class="border-rightbottom" v-for="(item, index) in hot" :key="index">{{item}}</li>
+        <li class="border-rightbottom"
+         v-for="(item, index) in hot" 
+         :key="index"
+         @click="handleCityClick(item)"
+         >{{item}}</li>
         </ul>
     </div>
      <div class="all">
@@ -33,9 +37,14 @@
         >
             <ul class="box nopadding">
                 <h4 class="border-rightbottom">{{item.initial}}</h4>
-                <li class="border-rightbottom" v-for="(citys, index) in item.list" :key="index">
+                <li class="border-rightbottom"
+                 v-for="(citys, index) in item.list" 
+                 :key="index"
+                 @click="handleCityClick(citys.name)"
+                 >
                     {{citys.name}}
                 </li>
+                <router-link  tag="li"  class="border-rightbottom" to="#">更多>></router-link>
             </ul>
         </div>
     </div>
@@ -47,6 +56,7 @@
 <script>
 import Scroll from 'better-scroll'
 import Foot from "@/components/Footer"
+import { mapState,mapMutations } from 'vuex'
 export default {
   name: "CityLocation",
   components:{
@@ -59,8 +69,17 @@ export default {
   },
   methods: {
     handleLetterClick(e){
-            this.$emit('change',e.target.innerText)
+      this.$emit('change',e.target.innerText)
     },
+    handleCityClick(city){
+      // this.$store.dispatch('changeCity',city)
+      // this.$store.commit('changeCity',city)
+      this.changeCity(city)
+
+      this.$router.push('/')
+    },
+  ...mapMutations(['changeCity']),
+  
     initScroll(){
       this.scroll = new Scroll(this.$refs.wrapper,{
             scrollY: true,
@@ -70,9 +89,6 @@ export default {
     }
         
   },
-    mounted() {
-     this.initScroll()
-  },
   watch:{
     letter(){
       if(this.letter){
@@ -80,6 +96,14 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },  
+  computed:{
+    ...mapState({
+      currentCity:'city'
+    })
+  },
+  mounted() {
+     this.initScroll()
   }
 };
 </script>

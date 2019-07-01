@@ -1,7 +1,7 @@
 {
     "ret":true,
     "data":{
-        "city":"北京",
+        
         "recommendList":[{
             "id":"001",
             "imgUrl":"https://p1.meituan.net/100.0/deal/2fc77e12891f591e6c50ef85c37a4c3840966.jpg",
