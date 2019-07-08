@@ -1,22 +1,23 @@
 <template>
     <div>
-        <div class="banner">
+        <div class="banner" @click="showGallery">
             <img class="banner-img" src="https://p1.meituan.net/deal/83e8003955dca2d4ff04adc4175580af65509.jpg" alt="">
         <div class="banner-info">
         <h1 class="banner-title">京彤轩烤肉火锅自助</h1>
         <div >火锅烤肉单人自助</div>
         </div>
         </div>
+        <detail-gallery v-show="galleryShow" @handleGallery="handleGallery"></detail-gallery>
         <div class="list-group list-top">
-            <div class="group-item dd-padding buy-price">
-                <div class="container">
+            <div class="group-item dd-padding buy-price" >
+                <div class="container" :class="{'price-fixed':topPrice === true}">
                         <div class="price">
                             <strong class="strong-color">60</strong>
                             元
                             <span class="retail-price">门市价:70元</span>
                         </div>
-                </div>
                 <button class="btn buy-btn btn-larger btn-strong">立即抢购</button>
+                </div>
             </div>
             <div class="group-item agreement">
                  <ul class="agree">
@@ -35,9 +36,41 @@
     </div>
 </template>
 <script>
-
+import detailGallery from './Gallery'
 export default {
-   name:"detailBanner"
+   name:"detailBanner",
+   data() {
+       return {
+           topPrice:false,
+           galleryShow:false      
+       }
+   },
+   components:{
+       detailGallery
+   },
+   activated(){
+       window.addEventListener('scroll',this.handleScroll)
+   },
+   deactivated(){
+       window.removeEventListener('scroll',this.handleScroll)
+   },
+   methods:{
+       showGallery(){
+           this.galleryShow = true
+       },
+       handleGallery(){
+            this.galleryShow = false
+       },
+       handleScroll(){
+           const top =  document.documentElement.scrollTop;
+           if (top >= 440 ){
+                this.topPrice =  true
+           }
+           else if(top <380){
+        this.topPrice =  false
+        }
+       }
+   }
 }
 </script>
 <style lang="stylus" scoped>
@@ -78,6 +111,7 @@ export default {
     .list-top 
         margin 0
         border-top 0
+        
     .dd-padding 
         padding 0.28rem 0.2rem
 
@@ -90,6 +124,8 @@ export default {
         left 0
         color #999
         width 100%
+        height 0 
+        padding-bottom 1.1rem
         background-color #fff
         box-sizing border-box
         border-bottom 1px solid #ddd8ce
@@ -155,4 +191,15 @@ export default {
   .iconfont
     font-size 20px
     vertical-align middle
+.price-fixed
+    position fixed
+    top 0
+    left 0
+    right 0
+    overflow hidden
+    z-index 11
+    background-color #fff
+    padding-bottom .64rem
+    padding 0.28rem 0.2rem
+    box-shadow 0 0 0.3rem 0
 </style>

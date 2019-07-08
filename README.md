@@ -48,3 +48,9 @@ action可省略
 vuex代码优化
 
 引入mapState 把vuex中的数据映射到computed计算属性里
+
+对全局事件的解绑
+
+由于使用keep-alive，可以使用actived，在其中添加滚动事件
+但详情页中添加的滚动事件的绑定会影响到其他页面
+故使用deactivated 对滚动事件解绑

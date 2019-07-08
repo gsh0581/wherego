@@ -45,7 +45,7 @@ export default {
     .header-input
       flex 1
       height .64rem
-      padding 0 2.2rem 0 .3rem
+      padding 0 1.2rem 0 .3rem
       line-height .64rem
       font-size .26rem
       color #68dbce

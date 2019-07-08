@@ -3,14 +3,24 @@ const resolve = (dir) => path.join(__dirname, dir);
 // eslint-disable-next-line no-unused-vars
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
 module.exports = {
-    // devServer:{
-    //     proxy:{
-    //         '/api':{
-    //             target:'',
-
-    //         }
-    //     }
-    // },
+    devServer: {
+        open: true,
+        host: 'localhost',
+        port: 8080,
+        https: false,
+        hotOnly: false,
+        proxy: {
+            // 配置跨域
+            '/api': {
+                target: 'http://localhost:8082/',
+                ws: true,
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': ''
+                }
+            }
+        },
+    },
     chainWebpack: config => {
         // 添加别名
         config.resolve.alias
