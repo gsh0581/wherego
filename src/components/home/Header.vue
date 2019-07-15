@@ -6,7 +6,7 @@
     <router-link to="/search" tag="div" class="header-input" :list="list">
    <i class="iconfont">&#xe760;</i> 输入商家/品类/商圈
     </router-link>
-    <div class="header-right"><i class="iconfont"> &#xe600;</i> 我的</div>
+    <router-link to="/profile" tag="div"  class="header-right"><i class="iconfont"> &#xe600;</i> 我的</router-link>
   </div>
 </template>
 

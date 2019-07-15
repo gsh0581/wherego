@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/home/Home.vue'
 import City from './views/city/City.vue'
 import Search from './views/search/Search.vue'
+import Profile from './views/profile/Profile.vue'
 import Detail from './views/detail/Detail.vue'
 Vue.use(Router)
 
@@ -28,6 +29,12 @@ export default new Router({
       path:'/detail',
       name:'detail',
       component:Detail
+     
+    },   
+    {
+      path:'/profile',
+      name:'profile',
+      component:Profile
      
     },  
   ]
