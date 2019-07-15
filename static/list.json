@@ -1,0 +1,161 @@
+{
+    "ret":true,
+    "data":{
+        
+        "recommendList":[{
+            "id":"001",
+            "imgUrl":"https://p1.meituan.net/100.0/deal/2fc77e12891f591e6c50ef85c37a4c3840966.jpg",
+            "title":"好伦哥",
+            "desc":"[门头沟城区]单人自助",
+            "price": "55.9",
+            "del":"59",
+            "saled":"437769"
+        },{
+            "id":"002",
+            "imgUrl":"https://p1.meituan.net/100.0/deal/2fc77e12891f591e6c50ef85c37a4c3840966.jpg",
+            "title":"好伦哥",
+            "desc":"[门头沟城区]单人自助",
+            "price": "55.9",
+            "del":"59",
+            "saled":"437769"
+        },{
+            "id":"003",
+            "imgUrl":"https://p1.meituan.net/100.0/deal/2fc77e12891f591e6c50ef85c37a4c3840966.jpg",
+            "title":"好伦哥",
+            "desc":"[门头沟城区]单人自助",
+            "price": "55.9",
+            "del":"59",
+            "saled":"437769"
+        },{
+            "id":"004",
+            "imgUrl":"https://p1.meituan.net/100.0/deal/2fc77e12891f591e6c50ef85c37a4c3840966.jpg",
+            "title":"好伦哥",
+            "desc":"[门头沟城区]单人自助",
+            "price": "55.9",
+            "del":"59",
+            "saled":"437769"
+        }],
+        "iconList": [
+            {
+              "id": 1,
+              "title": "美食",
+              "content": "iconmeishi",
+              "color": "meishi"
+            },
+            {
+              "id": 2,
+              "title": "猫眼电影",
+              "content": "iconArtboard",
+              "color": "maoyan"
+            },
+            {
+              "id": 3,
+              "title": "酒店",
+              "content": "iconjiudian",
+              "color": "jiudian"
+            },
+            {
+              "id": 4,
+              "title": "休闲娱乐",
+              "content": "iconxiuxian",
+              "color": "xiuxian"
+            },
+            {
+              "id": 5,
+              "title": "外卖",
+              "content": "iconicon-test",
+              "color": "waimai"
+            },
+            {
+              "id": 6,
+              "title": "KTV",
+              "content": "iconKTV",
+              "color": "ktv"
+            },
+            {
+              "id": 7,
+              "title": "周边游",
+              "content": "iconlvyou",
+              "color": "travel"
+            },
+            {
+              "id": 8,
+              "title": "丽人",
+              "content": "iconliren",
+              "color": "liren"
+            },
+            {
+              "id": 9,
+              "title": "小吃快餐",
+              "content": "iconshutiao",
+              "color": "xiaochi"
+            },
+            {
+              "id": 10,
+              "title": "生活服务",
+              "content": "iconshenghuofuwu",
+              "color": "fuwu"
+            },
+            {
+              "id": 11,
+              "title": "今日新单",
+              "content": "iconjinrixindan",
+              "color": "jinrixindan"
+            },
+            {
+              "id": 12,
+              "title": "足疗/按摩",
+              "content": "iconzuliao",
+              "color": "zuliao"
+            },
+            {
+              "id": 13,
+              "title": "甜点饮品",
+              "content": "iconbingjiling",
+              "color": "tiandian"
+            },
+            {
+              "id": 14,
+              "title": "母婴亲子",
+              "content": "iconmuyingqinzi",
+              "color": "muying"
+            },
+            {
+              "id": 15,
+              "title": "学习培训",
+              "content": "iconxuexipeixun",
+              "color": "xuexi"
+            },
+            {
+              "id": 16,
+              "title": "结婚",
+              "content": "iconjiehun",
+              "color": "jiehun"
+            },
+            {
+              "id": 17,
+              "title": "家装",
+              "content": "iconjiazhuang",
+              "color": "travel"
+            },
+            {
+              "id": 18,
+              "title": "汽车服务",
+              "content": "iconche",
+              "color": "che"
+            },
+            {
+              "id": 19,
+              "title": "川湘菜",
+              "content": "iconchuan",
+              "color": "chuan"
+            },
+            {
+              "id": 20,
+              "title": "全部分类",
+              "content": "iconquanbu",
+              "color": "quanbu"
+            }
+          ]
+    }
+}
